@@ -50,8 +50,8 @@ function App() {
 
   async function deposit() {
     try {
-      const contract = await getContract(true);
-      const tx = await contract.deposit(ethers.parseEther(amount), {
+      const myContract = await getContract(true);
+      const tx = await myContract.deposit(ethers.parseEther(amount), {
         value: ethers.parseEther(amount),
       });
       await tx.wait();
@@ -65,8 +65,8 @@ function App() {
 
   async function withdraw() {
     try {
-      const contract = await getContract(true);
-      const tx = await contract.withdraw(ethers.parseEther(amount));
+      const theContract = await getContract(true);
+      const tx = await theContract.withdraw(ethers.parseEther(amount));
       await tx.wait();
       setAmount("");
       fetchBalance();
