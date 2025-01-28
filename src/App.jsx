@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { ethers } from "ethers";
 import abi from "./abi.json";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./App.css";  
 
-const CONTRACT_ADDRESS = "0xcb6ac7ca1766567e70951dfc2b9b18fc8a4067df"; // Replace with deployed contract address
+const CONTRACT_ADDRESS = "0xcb6ac7ca1766567e70951dfc2b9b18fc8a4067df";
 
 function App() {
   const [balance, setBalance] = useState("0");
@@ -78,7 +78,7 @@ function App() {
 
   return (
     <div style={{ padding: "2rem", fontFamily: "Arial" }}>
-      <h1>Assessment DApp</h1>
+      <h1>Maylord Payments DApp</h1>
       <button onClick={requestAccounts}>Connect Wallet</button>
       <div>
         <h2>Balance: {balance} ETH</h2>
