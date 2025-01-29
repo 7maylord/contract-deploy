@@ -21,7 +21,7 @@ function App() {
         toast.error(`Wallet connection failed: ${err.message}`);
       }
     } else {
-      toast.warn("Please install MetaMask to use this app.");
+      toast.warn("Please add wallet to use this app.");
     }
   }
 
@@ -48,7 +48,7 @@ function App() {
     }
   }
 
-  async function deposit() {
+  async function handleDeposit() {
     try {
       const myContract = await getContract(true);
       const tx = await myContract.deposit(ethers.parseEther(amount), {
@@ -63,7 +63,7 @@ function App() {
     }
   }
 
-  async function withdraw() {
+  async function handleWithdraw() {
     try {
       const theContract = await getContract(true);
       const tx = await theContract.withdraw(ethers.parseEther(amount));
@@ -77,10 +77,10 @@ function App() {
   }
 
   return (
-    <div style={{ padding: "2rem", fontFamily: "Arial" }}>
-      <h1>Maylord Payments DApp</h1>
+    <div className="dapp-container">
+      <h1>Maylord Mini DApp</h1>
       <button onClick={requestAccounts}>Connect Wallet</button>
-      <div>
+      <div className="balance-section">
         <h2>Balance: {balance} ETH</h2>
         <button onClick={fetchBalance}>Refresh Balance</button>
       </div>
@@ -91,8 +91,8 @@ function App() {
           value={amount}
           onChange={(e) => setAmount(e.target.value)}
         />
-        <button onClick={deposit}>Deposit</button>
-        <button onClick={withdraw}>Withdraw</button>
+        <button onClick={handleDeposit}>Deposit</button>
+        <button onClick={handleWithdraw}>Withdraw</button>
       </div>
       <ToastContainer />
     </div>

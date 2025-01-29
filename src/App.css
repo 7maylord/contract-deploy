@@ -1,26 +1,119 @@
+/* General Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #1e3c72, #2a5298); 
+  color: #ffffff; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Container for the DApp */
+.dapp-container {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 3rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px); 
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  max-width: 1000px;
+  width: 100%;  
+  text-align: center;
+}
+
+/* Title */
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(45deg, #ff9a9e, #fad0c4, #fbc2eb, #a6c1ee); 
+  -webkit-background-clip: text; 
+  background-clip: text;
+  color: transparent;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Buttons */
 button {
-  padding: 0.7rem 1.5rem;
-  margin: 0.5rem;
-  background-color: #4caf50;
-  color: white;
-  font-size: 1rem;
+  background: #4caf50; 
+  color: #ffffff;
   border: none;
+  padding: 0.75rem 1.5rem;
+  margin: 0.5rem;
   border-radius: 8px;
+  font-size: 1rem;
   cursor: pointer;
-  transition: background-color 0.3s, transform 0.2s;
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 
 button:hover {
-  background-color: #45a049;
+  background: #45a049; 
+  transform: scale(1.05); 
 }
 
 button:active {
-  transform: scale(0.98);
+  transform: scale(0.95); 
 }
 
-input {
-  margin: 1rem;
-  padding: 0.5rem;
+/* Balance Section */
+.balance-section {
+  margin: 1.5rem 0;
+}
+
+.balance-section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+
+/* Input Field */
+input[type="number"] {
+  width: 75%;
+  padding: 0.75rem;
+  margin: 0.5rem 0;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
   font-size: 1rem;
-  border-radius: 6px;
+  outline: none;
+}
+
+input[type="number"]::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+input[type="number"]:focus {
+  border-color: #4caf50; 
+}
+
+/* Toast Container (for notifications) */
+.ToastContainer {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .dapp-container {
+    padding: 2rem;
+    max-width: 90%;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  button {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  input[type="number"] {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
 }
